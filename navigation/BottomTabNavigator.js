@@ -1,21 +1,18 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import * as React from 'react';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import * as React from "react";
 
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import ProfileScreen from '../screens/ProfileScreen';
-import LinksScreen from '../screens/LinksScreen';
-import MantrasScreen from '../screens/MantrasScreen';
-import NotificationsTest from '../screens/NotificationsTest';
-import MoodChart from '../screens/MoodChart';
+import TabBarIcon from "../components/TabBarIcon";
+import HomeScreen from "../screens/HomeScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import LinksScreen from "../screens/LinksScreen";
+import MantrasScreen from "../screens/MantrasScreen";
+import NotificationsTest from "../screens/NotificationsTest";
+import MoodChart from "../screens/MoodChart";
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Home';
+const INITIAL_ROUTE_NAME = "Home";
 
 export default function BottomTabNavigator({ navigation, route }) {
-  // Set the header title on the parent stack navigator depending on the
-  // currently active tab. Learn more in the documentation:
-  // https://reactnavigation.org/docs/en/screen-options-resolution.html
   navigation.setOptions({ headerTitle: getHeaderTitle(route) });
 
   return (
@@ -24,7 +21,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={LinksScreen}
         options={{
-          title: 'Chat',
+          title: "Chat",
 
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-chatbubbles" />
@@ -35,27 +32,17 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Links"
         component={MantrasScreen}
         options={{
-          title: 'Mantras',
+          title: "Mantras",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-happy" />
           ),
         }}
       />
-      {/* <BottomTab.Screen
-        name="Mantras"
-        component={MantrasScreen}
-        options={{
-          title: 'Mantras',
-          tabBarIcon: ({ focused }) => (
-            <TabBarIcon focused={focused} name="md-book" />
-          ),
-        }}
-      /> */}
       <BottomTab.Screen
         name="Notifications"
         component={NotificationsTest}
         options={{
-          title: 'Notification',
+          title: "Notification",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-notifications" />
           ),
@@ -65,7 +52,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Mood Charts"
         component={MoodChart}
         options={{
-          title: 'Mood Charts',
+          title: "Mood Charts",
           tabBarIcon: ({ focused }) => (
             <TabBarIcon focused={focused} name="md-stats" />
           ),
@@ -79,13 +66,13 @@ function getHeaderTitle(route) {
     route.state?.routes[route.state.index]?.name ?? INITIAL_ROUTE_NAME;
 
   switch (routeName) {
-    case 'Home':
-      return 'Chat';
-    case 'Links':
-      return 'Mantras';
-    case 'Notifications':
-      return 'Notifications';
-    case 'Mood Charts':
-      return 'Mood Charts';
+    case "Home":
+      return "Chat";
+    case "Links":
+      return "Mantras";
+    case "Notifications":
+      return "Notifications";
+    case "Mood Charts":
+      return "Mood Charts";
   }
 }

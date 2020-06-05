@@ -1,35 +1,33 @@
-import React, { useState } from 'react';
-import { View, Text } from 'react-native';
-import axios from 'axios';
-
-import { Button, Card, TextInput } from 'react-native-paper';
+import React, { useState } from "react";
+import axios from "axios";
+import { Button, Card, TextInput } from "react-native-paper";
 
 const SignUp = () => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   const apiPost = () => {
     axios
-      .post('https://help-for-heroes.herokuapp.com/users', {
+      .post("https://help-for-heroes.herokuapp.com/users", {
         username: username,
         email: email,
         password: password,
       })
       .then((response) => {
         console.log(response);
-        alert('Success');
+        alert("Success");
       })
       .catch((error) => {
         console.log(error);
-        alert('Please try again later.');
+        alert("Please try again later.");
       });
   };
 
   const wipeForm = () => {
-    setUsername('');
-    setEmail('');
-    setPassword('');
+    setUsername("");
+    setEmail("");
+    setPassword("");
   };
 
   const handleSubmit = () => {
@@ -38,7 +36,7 @@ const SignUp = () => {
       apiPost();
       wipeForm();
     } else {
-      alert('Please enter a valid email address');
+      alert("Please enter a valid email address");
     }
   };
 
