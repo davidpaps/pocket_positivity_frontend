@@ -26,7 +26,7 @@ A user can then set positive messages to be sent via in-app push notifications. 
 
 ## How to Run
 
-First, visit the [backend repo](https://github.com/davidpaps/pocket_positivity_backend) and follow the instructions in the README to install the necessary dependencies and configure the database and tables necessary to run the app. Whilst the local host is then running, keeping the backend server live, open up another command line interface and text editor. Clone this repo and in this codes command line, type:
+First, visit the [backend repo](https://github.com/davidpaps/pocket_positivity_backend) and follow the instructions in the README to install the necessary dependencies and configure the database and tables necessary to run the app. Whilst the local host is then running, keeping the backend server live, open up another command line interface and text editor. Clone this repo and in this codes command line type:
 
 ```
 yarn install
@@ -38,7 +38,7 @@ This will install the dependancies necessary to run the front end of the applica
 npm i -g expo-cli
 ```
 
-Once this has installed you are ready to run the app. You will then need to visit either the [App Store](https://apps.apple.com/us/app/expo-client/id982107779) for use with `iOS`, or the [Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_GB) for use on `Android`. Omce the app has downloaded on the handheld device, and after you have signed up for a free account, you can then type in the command line:
+Once this has installed you are ready to run the app. You will then need download the Expo app. Visit either the [App Store](https://apps.apple.com/us/app/expo-client/id982107779) for use with `iOS`, or the [Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en_GB) for use on `Android`. Once the app has downloaded on the handheld device, and after you have signed up for a free account, you can then type in the command line:
 
 ```
 yarn start
@@ -48,8 +48,38 @@ This will boot up the Expo Client. A page will automatically open and load in th
 
 ---
 
+<table>
+  <tr>
+     <td>Sign In</td>
+      <td>Mood Component</td>
+      <td>Chatbot</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src='./assets/images/sign_in.png' width="3000"/></td>
+    <td valign="top"><img src='./assets/images/mood_component.png' width="3000"/></td>
+     <td valign="top"><img src='./assets/images/chatbot.png' width="3000"/></td>
+  </tr>
+ </table>
+
+ <table>
+  <tr>
+     <td>Mood Chart</td>
+      <td>Mantras</td>
+      <td>Notifications</td>
+  </tr>
+  <tr>
+    <td valign="top"><img src='./assets/images/mood_chart.png' width="3000"/></td>
+    <td valign="top"><img src='./assets/images/mantras.png' width="3000"/></td>
+     <td valign="top"><img src='./assets/images/notifications.png' width="3000"/></td>
+  </tr>
+ </table>
+
 ---
 
 ## Acknowledgements
 
+**All of the heroes working through this tough time**
+
 [React-Chatbot-Native](https://github.com/LucasBassetti/react-native-chatbot) is primarily written and maintained by [Lucas Bassetti](https://github.com/LucasBassetti). Expo functionality is patched by [Jérémie Zarca](https://github.com/jzarca01).
+
+---
