@@ -1,5 +1,5 @@
-import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import axios from "axios";
+import React, { useState, useEffect } from "react";
 import {
   Text,
   View,
@@ -7,17 +7,17 @@ import {
   StyleSheet,
   Button,
   TextInput,
-} from 'react-native';
+} from "react-native";
 
 const MoodInput = (props) => {
   const { triggerNextStep } = props;
 
   const [mood, setMood] = useState(5);
   const [shownValue, setShownValue] = useState();
-  const [moodComment, setMoodComment] = useState('No comment this time');
-  const [buttonColour, setButtonColour] = useState('#2b396b');
+  const [moodComment, setMoodComment] = useState("No comment this time");
+  const [buttonColour, setButtonColour] = useState("#2b396b");
   const [buttonWasPressed, setButtonWasPressed] = useState(false);
-  console.log('props', props);
+  console.log("props", props);
 
   const postMoodInput = () => {
     // axios
@@ -29,24 +29,24 @@ const MoodInput = (props) => {
     //     alert('Please try again later');
     //     console.error(error);
     //   });
-    let nextStep = mood >= 5 ? 'happy' : 'unhappy';
+    let nextStep = mood >= 5 ? "happy" : "unhappy";
     triggerNextStep(buttonWasPressed, nextStep);
-    console.log('success', 'anxious-someone-to-talk-to');
+    console.log("success", "anxious-someone-to-talk-to");
   };
 
   return (
     <View style={styles.container}>
-      <Text style={{ fontSize: 20, color: '#2b396b', marginBottom: 5 }}>
+      <Text style={{ fontSize: 20, color: "#2b396b", marginBottom: 5 }}>
         Welcome Back!
       </Text>
-      <Text style={{ fontSize: 20, color: '#2b396b', marginBottom: 30 }}>
+      <Text style={{ fontSize: 20, color: "#2b396b", marginBottom: 30 }}>
         How are you Feeling?
       </Text>
       <Slider
         margin={20}
         style={{ width: 250, height: 40 }}
         value={5.5}
-        handleColor={'#2b396b'}
+        handleColor={"#2b396b"}
         minimumValue={1}
         maximumValue={10}
         minimumTrackTintColor="#20bd3f"
@@ -72,7 +72,7 @@ const MoodInput = (props) => {
         color={buttonColour}
         onPress={() => {
           postMoodInput();
-          setButtonColour('#780e80');
+          setButtonColour("#780e80");
         }}
       />
     </View>
@@ -82,38 +82,34 @@ const MoodInput = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '15%',
-    // paddingVertical: 20,
-    backgroundColor: '#fff',
+    justifyContent: "center",
+    alignItems: "center",
+    height: "15%",
+    backgroundColor: "#fff",
   },
   title: {
-    width: '100%',
+    width: "100%",
     fontSize: 30,
-    textAlign: 'center',
+    textAlign: "center",
   },
   scrollView: {
-    backgroundColor: 'red',
+    backgroundColor: "red",
   },
   instructions: {
-    textAlign: 'center',
-    // color: 'powderpink',
+    textAlign: "center",
   },
   comment: {
-    // margin: 20,
-    textAlign: 'center',
+    textAlign: "center",
     borderRadius: 20,
     width: 250,
     height: 50,
-    borderColor: 'grey',
+    borderColor: "grey",
     borderWidth: 1,
   },
   moodNumber: {
     margin: 10,
   },
   button: {
-    // paddingVertical: 20,
     padding: 20,
   },
 });
